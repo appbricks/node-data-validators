@@ -10,11 +10,12 @@ export type ValidationOptions = { [key: string]: string } | {
   isRequired?: boolean
 
   verifyWith?: string
-  verifyWithName?: string
+  verifyWithRegex?: string
 
   formatMask?: string
   formattedValue?: string
 
+  shortMessage?: string
   longMessage?: string 
 }
 

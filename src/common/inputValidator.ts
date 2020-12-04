@@ -8,20 +8,29 @@ const inputValidator: Validator<string> = (
 
   const isRequired = options && options.isRequired;
   const verifyWith = options && options.verifyWith;
-  const verifyWithName = options && options.verifyWithName;
+  const verifyWithRegex = options && options.verifyWithRegex;
+  const shortMessage = options && options.shortMessage;
+  const longMessage = options && options.longMessage;
   
   if (isRequired && input.length == 0) {
     return {
       isValid: false,
-      shortMessage: 'required',
-      longMessage: `The ${inputName} input is required.`
+      shortMessage: shortMessage || 'required',
+      longMessage: longMessage || `The ${inputName} input is required.`
     };
   }
   if (verifyWith && input != verifyWith) {
     return {
       isValid: false,
-      shortMessage: 'not matching',
-      longMessage: `The ${inputName} input does not match the ${verifyWithName} you entered.`
+      shortMessage: shortMessage || 'not matching',
+      longMessage
+    };
+  }
+  if (verifyWithRegex && (!new RegExp(verifyWithRegex).test(input))) {
+    return {
+      isValid: false,
+      shortMessage: shortMessage || `invalid input`,
+      longMessage
     };
   }
 
