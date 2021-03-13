@@ -35,6 +35,13 @@
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.3"
   },
+  "files": [
+    "LICENSE", 
+    "README.md", 
+    "package.json", 
+    "package-lock.json", 
+    "lib/"
+  ],
   "jest": {
     "verbose": true,
     "transform": {
