@@ -1,7 +1,7 @@
 {
   "name": "@appbricks/data-validators",
-  "version": "0.0.1",
-  "description": "Node Typescript Module Template",
+  "version": "0.0.2",
+  "description": "Common input data validators",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
